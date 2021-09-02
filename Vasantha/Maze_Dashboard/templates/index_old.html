@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project MAZE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+  rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+  crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  
+  <script src="https://cdn.plot.ly/plotly-2.4.1.min.js"></script>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" class="d-flex justify-content-around" >
+        <div class="row" class="d-flex justify-content-around" style=
+    "background-color: #eee"><div class="col-md-12 col-lg-5 col-sm-12"><br /></div></div>
+    <div class="row" class="d-flex justify-content-around" style=
+    "background-color: #eee">
+      <div class="col-md-12 col-lg-2 col-sm-12">
+        <div class="well">
+          <h5>Select a state:</h5>
+          
+          <form method='post' action='/' id='myform'>
+          <select id="SelState" name="SelState" onchange="optionChanged(this.value)">
+            {% for state in state_list %}
+            {%if sel_state == state.state_fips|string %}
+            <option value={{state.state_fips}} selected>{{state.sname}}-{{state.sabbr}}</option>
+            {% else %}
+            <option value={{state.state_fips}}>{{state.sname}}-{{state.sabbr}}</option>
+            {%endif%}
+            {% endfor %}
+          </select>
+          <h5>Select a county:</h5>
+          <select id="SelCounty" name="SelCounty" onchange="optionCtChanged(this.value)">
+            {% for county in county_list %}
+            <option value={{county.county_fips}}>{{county.county}}</option>
+            {% endfor %}
+          </select>
+          </form>
+
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body">
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-5 col-sm-12">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-12 col-lg-5 col-sm-12">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row" class="d-flex justify-content-around" style=
+    "background-color: #eee"><div class="col-md-12 col-lg-5 col-sm-12"><br /></div></div>
+    <div class="row" class="d-flex justify-content-around" style=
+    "background-color: #eee">
+      <div class="col-md-12 col-lg-12 col-sm-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+    <div class="row" class="d-flex justify-content-around" style=
+    "background-color: #eee"><div class="col-md-12 col-lg-5 col-sm-12"><br /></div></div>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script type='text/javascript'> 
+    $(document).ready(function(){
+      $('#SelState').change(function(){
+        // Call submit() method on <form id='myform'>
+        $('#myform').submit();
+      });
+    });
+    </script>
+  <script src="./static/js/app.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+  integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+
+</html>
