@@ -201,7 +201,7 @@ let layout = {
 Plotly.newPlot("bar", tracedata, layout);
 
 // Pie Chart Info
-// Trace1 for the State Data
+// Trace2 for the Types Data
 let piecolors = ['#ee204d', '#1f75fe', '#fce883', '#ff7538', '#1cac78', '#926eae', '#c0448f', '#ff5349', '#c5e384',
     '#7366bd', '#ffb653', '#199ebd', '#fdd9b5', '#5d76cd', '#1dacd6', '#80daeb', '#faa76c', '#9d81ba', '#ff9baa', '#a8e4a0',
     '#ef98aa', '#cd4a4a', '#9aceeb', '#f664af', '#c0448f', '#fc89ac', '#e7c697', '#77dde7', '#8e4584', '#cb4154', '#cdc5c2',
