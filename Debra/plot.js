@@ -170,11 +170,11 @@ let colors = ['#ee204d', '#1f75fe', '#fce883', '#ff7538', '#1cac78', '#926eae', 
 ]
 let trace1 = {
     type: "bar",
-    x: data.map(row => row.state),
-    y: data.map(row => row.total_museums),
+    y: data.map(row => row.state),
+    x: data.map(row => row.total_museums),
     // text: reversedData.map(object => object.state),
     name: "Total Museums by State",
-    // orientation: "h",
+    orientation: "h",
     // mode: 'markers',
     marker: {
         color: colors
@@ -188,12 +188,12 @@ let tracedata = [trace1];
 // Apply a title to the layout
 let layout = {
     title: "Total Museums by State",
-    // margin: {
-    //     l: 100,
-    //     r: 100,
-    //     t: 100,
-    //     b: 100
-    // }
+    margin: {
+        l: 100,
+        r: 50,
+        t: 20,
+        b: 20
+    }
 };
 
 // Render the plot to the div tag with id "plot"
