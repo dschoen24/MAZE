@@ -26,7 +26,12 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
-
+/*--------------------------------------------------------------
+# Font
+--------------------------------------------------------------*/
+.largefontheader {
+  font-size: 100px;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -390,7 +395,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("../img/museum_front_page.jpg") top center;
+  background: url("../img/homepage.png") top center;
   background-size: cover;
   position: relative;
 }
