@@ -1,5 +1,5 @@
 
-let data = 
+data = 
 [{'state':'CA', 'total_museums': 2673}, 
 {'state': 'NY', 'total_museums': 2251}, 
 {'state': 'TX', 'total_museums': 1880}, 
