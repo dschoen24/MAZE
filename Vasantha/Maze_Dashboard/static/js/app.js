@@ -796,7 +796,8 @@ function plot_revenue(rev,name)
 
   var colors = ['#133C55', '#FCBFB7','#6494AA','#8C001A',
   '#FF9000','#593C8F', '#FF6B6B', '#65532F', '#DB4C40','#D295BF']
-    colors = colors.reverse()
+
+    // colors = colors.reverse()
     var top_revenue_trace =
       {
 
