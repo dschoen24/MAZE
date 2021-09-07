@@ -9,7 +9,7 @@ ___________________________________________________
 Contributors: Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi) / Vasantha Mutyala (V-MalM) / Debra Potts (dschoen24)
 
 ### Objective: 
-The objective of this project is
+The objective of this project is to create an interactive dashboard that will explore 
 
 Visualization
 Display Museums, Zoos, Aquariums on the map using leaflet
@@ -18,7 +18,6 @@ User Interaction
 Provide search by state, county, attaction_type  (drop downs)
 Search by name (textbox input)
 
-Project 3 - Extract Tr
 
 Repository Files and Folders:
 Resources :
