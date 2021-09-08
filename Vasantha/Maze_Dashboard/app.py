@@ -113,18 +113,18 @@ def home():
 
 @app.route("/API")
 def API():
-   return jsonify(us_list)
+    return jsonify(us_list)
 
 @app.route("/APIM")
 def APIM():
-# may be create a json file here 
-    # file_path = ('data.js')
-    # print (file_path)
-
+# create a json file here 
+    # file_path = os.path.join(os.getcwd(),'Maze_Dashboard\static\js','data.js')
+    # print(file_path)
     # jsonString = "data =" + json.dumps(us_mus_list) 
     # jsonFile = open(file_path, "w")
     # jsonFile.write(jsonString)
     # jsonFile.close()
+    
 
     return jsonify(us_mus_list)   
 
