@@ -843,7 +843,7 @@ function plot_revenue(rev,name)
       }
 
     var bar_layout = {
-      title: "US Top 10 Revenue Making",
+      title: "<b>Top 10 Revenue Making</b>",
       plot_bgcolor:"#fff8ed",
       paper_bgcolor:"#fff8ed",
       font:{
