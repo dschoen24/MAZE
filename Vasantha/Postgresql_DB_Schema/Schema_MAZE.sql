@@ -43,6 +43,7 @@ Drop table if exists US_Museum_Types cascade;
 CREATE TABLE US_Museum_Types (
     Museum_Type_ID int   NOT NULL,
     Museum_Type varchar(128)   NOT NULL,
+    museum_type_alt varchar(356),
     PRIMARY KEY (Museum_Type_ID)
 );
 
