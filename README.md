@@ -9,14 +9,14 @@ ___________________________________________________
 **Contributors:** Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)
 
 ### Objective: 
-The objective of this project is to create an interactive dashboard that will explore 
+To create an interactive dashboard that will explore dataset of Museums, Zoos, Aquariums, Nature centers and more.
 
-Visualization
+### Visualization
 Display Museums, Zoos, Aquariums on the map using leaflet
 
 ## User Interaction
-Provide search by state, county, attaction_type  (drop downs)
-Search by name (textbox input)
+Provide search by state, county, city  (drop downs)
+
 
 
 Repository Files and Folders:
