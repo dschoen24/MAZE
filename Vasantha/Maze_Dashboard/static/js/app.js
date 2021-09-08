@@ -151,7 +151,7 @@ sel_mus_type_id = ""
 ////////////////////////////////revenue////////////////////////////////////////////////
 
 
-d3.json("/APIREV/"+"0").then(revenue_data =>{
+d3.json("/APIREV/0/0/0").then(revenue_data =>{
   console.log(revenue_data)
 
   revenue_data.sort((a, b) => a.revenue - b.revenue);
@@ -279,7 +279,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
     //////////////////////////////revenue /////////////////////////////////////////////////
     
 
-      d3.json("/APIREV/"+sstate).then(revenue_data =>{
+      d3.json("/APIREV/"+sstate+"/0/0").then(revenue_data =>{
         console.log(revenue_data)
       
         revenue_data.sort((a, b) => a.revenue - b.revenue);
@@ -402,7 +402,21 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
 
       ///////////////////////////////////////////////////////////////////////////////////////////////// 
 
+      //////////////////////////////revenue /////////////////////////////////////////////////
+    
+
+      d3.json("/APIREV/"+sstate+"/"+scounty+"/0").then(revenue_data =>{
+        console.log(revenue_data)
       
+        revenue_data.sort((a, b) => a.revenue - b.revenue);
+      
+        x = revenue_data.map(row => row.revenue),
+        y = revenue_data.map(row => row.legal_name),
+           
+        plot_revenue(x,y)
+      
+      })
+       ///////////////////////////////////////////revenue/////////////////////////   
 /////////////////////////////////////////////////////////////////////////////////////////////////
 d3.json("/APIHM").then(response =>{
   map2(response)
@@ -490,6 +504,21 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
 
       ///////////////////////////////////////////////////////////////////////////////////////////////// 
      
+ //////////////////////////////revenue /////////////////////////////////////////////////
+    
+
+ d3.json("/APIREV/"+sstate+"/"+scounty+"/"+scity).then(revenue_data =>{
+  console.log(revenue_data)
+
+  revenue_data.sort((a, b) => a.revenue - b.revenue);
+
+  x = revenue_data.map(row => row.revenue),
+  y = revenue_data.map(row => row.legal_name),
+     
+  plot_revenue(x,y)
+
+})
+ ///////////////////////////////////////////revenue/////////////////////////   
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 d3.json("/APIHM").then(response =>{
@@ -512,8 +541,8 @@ function plot_map(json_response)
 
 // Creating the map object
 var myMap = L.map("map", {
-  center: [38, -97],
-  zoom: 4
+  center: [50, -97],
+  zoom: 3
 });
 
 // Adding the tile layer
