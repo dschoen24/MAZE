@@ -75,3 +75,31 @@ CREATE TABLE US_MAZE_Data (
    FOREIGN KEY(FIPS_County) REFERENCES US_Counties (County_Fips)
 );
 
+
+CREATE TABLE US_Trip_Adv_Reviews (
+   Museum_ID bigint   NOT NULL,
+   Museum_Name varchar(356)   NOT NULL,
+   Legal_Name varchar(356)   NOT NULL,
+   Museum_Type_ID int   NOT NULL,
+   Street_Add_AdmLoc varchar(356) ,
+   City_AdmLoc varchar(356)   NOT NULL,
+   State_AdmLoc varchar(2)   NOT NULL,
+   Zip_AdmLoc varchar(10)   NOT NULL,
+   Street_Add_PhyLoc varchar(356)  ,
+   City_PhyLoc varchar(356)   NOT NULL,
+   State_PhyLoc varchar(2)   NOT NULL,
+   Zip_PhyLoc varchar(10)  ,
+   Phone_Number varchar(20) ,
+   Latitude decimal   NOT NULL,
+   Longitude decimal   NOT NULL,
+   Locale_Code_NCES decimal ,
+   FIPS_County int   NOT NULL,
+   Region_Code_AAM int   NOT NULL,
+   Employer_ID varchar(356)   ,
+   Tax_Period decimal   ,
+   Income decimal   ,
+   Revenue decimal  ,
+   PRIMARY KEY (Museum_ID),
+   FOREIGN KEY(Museum_Type_ID) REFERENCES US_Museum_Types (Museum_Type_ID),
+   FOREIGN KEY(FIPS_County) REFERENCES US_Counties (County_Fips)
+);
