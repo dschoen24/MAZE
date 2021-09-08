@@ -1,60 +1,61 @@
-update us_states set latitude=	32.318231	, longitude =	-86.902298	where state_fips =	1
-update us_states set latitude=	63.588753	, longitude =	-154.493062	where state_fips =	2
-update us_states set latitude=	34.048928	, longitude =	-111.093731	where state_fips =	4
-update us_states set latitude=	35.20105	, longitude =	-91.831833	where state_fips =	5
-update us_states set latitude=	36.778261	, longitude =	-119.417932	where state_fips =	6
-update us_states set latitude=	39.550051	, longitude =	-105.782067	where state_fips =	8
-update us_states set latitude=	41.603221	, longitude =	-73.087749	where state_fips =	9
-update us_states set latitude=	38.910832	, longitude =	-75.52767	where state_fips =	10
-update us_states set latitude=	38.905985	, longitude =	-77.033418	where state_fips =	11
-update us_states set latitude=	27.664827	, longitude =	-81.515754	where state_fips =	12
-update us_states set latitude=	32.157435	, longitude =	-82.907123	where state_fips =	13
-update us_states set latitude=	19.898682	, longitude =	-155.665857	where state_fips =	15
-update us_states set latitude=	44.068202	, longitude =	-114.742041	where state_fips =	16
-update us_states set latitude=	40.633125	, longitude =	-89.398528	where state_fips =	17
-update us_states set latitude=	40.551217	, longitude =	-85.602364	where state_fips =	18
-update us_states set latitude=	41.878003	, longitude =	-93.097702	where state_fips =	19
-update us_states set latitude=	39.011902	, longitude =	-98.484246	where state_fips =	20
-update us_states set latitude=	37.839333	, longitude =	-84.270018	where state_fips =	21
-update us_states set latitude=	31.244823	, longitude =	-92.145024	where state_fips =	22
-update us_states set latitude=	45.253783	, longitude =	-69.445469	where state_fips =	23
-update us_states set latitude=	39.045755	, longitude =	-76.641271	where state_fips =	24
-update us_states set latitude=	42.407211	, longitude =	-71.382437	where state_fips =	25
-update us_states set latitude=	44.314844	, longitude =	-85.602364	where state_fips =	26
-update us_states set latitude=	46.729553	, longitude =	-94.6859	where state_fips =	27
-update us_states set latitude=	32.354668	, longitude =	-89.398528	where state_fips =	28
-update us_states set latitude=	37.964253	, longitude =	-91.831833	where state_fips =	29
-update us_states set latitude=	46.879682	, longitude =	-110.362566	where state_fips =	30
-update us_states set latitude=	41.492537	, longitude =	-99.901813	where state_fips =	31
-update us_states set latitude=	38.80261	, longitude =	-116.419389	where state_fips =	32
-update us_states set latitude=	43.193852	, longitude =	-71.572395	where state_fips =	33
-update us_states set latitude=	40.058324	, longitude =	-74.405661	where state_fips =	34
-update us_states set latitude=	34.97273	, longitude =	-105.032363	where state_fips =	35
-update us_states set latitude=	43.299428	, longitude =	-74.217933	where state_fips =	36
-update us_states set latitude=	35.759573	, longitude =	-79.0193	where state_fips =	37
-update us_states set latitude=	47.551493	, longitude =	-101.002012	where state_fips =	38
-update us_states set latitude=	40.417287	, longitude =	-82.907123	where state_fips =	39
-update us_states set latitude=	35.007752	, longitude =	-97.092877	where state_fips =	40
-update us_states set latitude=	43.804133	, longitude =	-120.554201	where state_fips =	41
-update us_states set latitude=	41.203322	, longitude =	-77.194525	where state_fips =	42
-update us_states set latitude=	41.580095	, longitude =	-71.477429	where state_fips =	44
-update us_states set latitude=	33.836081	, longitude =	-81.163725	where state_fips =	45
-update us_states set latitude=	43.969515	, longitude =	-99.901813	where state_fips =	46
-update us_states set latitude=	35.517491	, longitude =	-86.580447	where state_fips =	47
-update us_states set latitude=	31.968599	, longitude =	-99.901813	where state_fips =	48
-update us_states set latitude=	39.32098	, longitude =	-111.093731	where state_fips =	49
-update us_states set latitude=	44.558803	, longitude =	-72.577841	where state_fips =	50
-update us_states set latitude=	37.431573	, longitude =	-78.656894	where state_fips =	51
-update us_states set latitude=	47.751074	, longitude =	-120.740139	where state_fips =	53
-update us_states set latitude=	38.597626	, longitude =	-80.454903	where state_fips =	54
-update us_states set latitude=	43.78444	, longitude =	-88.787868	where state_fips =	55
-update us_states set latitude=	43.075968	, longitude =	-107.290284	where state_fips =	56
-update us_states set latitude=	0	, longitude =	0	where state_fips =	60
-update us_states set latitude=	0	, longitude =	0	where state_fips =	64
-update us_states set latitude=	0	, longitude =	0	where state_fips =	66
-update us_states set latitude=	0	, longitude =	0	where state_fips =	68
-update us_states set latitude=	0	, longitude =	0	where state_fips =	69
-update us_states set latitude=	0	, longitude =	0	where state_fips =	70
-update us_states set latitude=	18.220833	, longitude =	-66.590149	where state_fips =	72
-update us_states set latitude=	0	, longitude =	0	where state_fips =	74
-update us_states set latitude=	0	, longitude =	0	where state_fips =	78
+update us_states set latitude=	32.318231	, longitude =	-86.902298	where state_fips =	1	;
+update us_states set latitude=	63.588753	, longitude =	-154.493062	where state_fips =	2	;
+update us_states set latitude=	34.048928	, longitude =	-111.093731	where state_fips =	4	;
+update us_states set latitude=	35.20105	, longitude =	-91.831833	where state_fips =	5	;
+update us_states set latitude=	36.778261	, longitude =	-119.417932	where state_fips =	6	;
+update us_states set latitude=	39.550051	, longitude =	-105.782067	where state_fips =	8	;
+update us_states set latitude=	41.603221	, longitude =	-73.087749	where state_fips =	9	;
+update us_states set latitude=	38.910832	, longitude =	-75.52767	where state_fips =	10	;
+update us_states set latitude=	38.905985	, longitude =	-77.033418	where state_fips =	11	;
+update us_states set latitude=	27.664827	, longitude =	-81.515754	where state_fips =	12	;
+update us_states set latitude=	32.157435	, longitude =	-82.907123	where state_fips =	13	;
+update us_states set latitude=	19.898682	, longitude =	-155.665857	where state_fips =	15	;
+update us_states set latitude=	44.068202	, longitude =	-114.742041	where state_fips =	16	;
+update us_states set latitude=	40.633125	, longitude =	-89.398528	where state_fips =	17	;
+update us_states set latitude=	40.551217	, longitude =	-85.602364	where state_fips =	18	;
+update us_states set latitude=	41.878003	, longitude =	-93.097702	where state_fips =	19	;
+update us_states set latitude=	39.011902	, longitude =	-98.484246	where state_fips =	20	;
+update us_states set latitude=	37.839333	, longitude =	-84.270018	where state_fips =	21	;
+update us_states set latitude=	31.244823	, longitude =	-92.145024	where state_fips =	22	;
+update us_states set latitude=	45.253783	, longitude =	-69.445469	where state_fips =	23	;
+update us_states set latitude=	39.045755	, longitude =	-76.641271	where state_fips =	24	;
+update us_states set latitude=	42.407211	, longitude =	-71.382437	where state_fips =	25	;
+update us_states set latitude=	44.314844	, longitude =	-85.602364	where state_fips =	26	;
+update us_states set latitude=	46.729553	, longitude =	-94.6859	where state_fips =	27	;
+update us_states set latitude=	32.354668	, longitude =	-89.398528	where state_fips =	28	;
+update us_states set latitude=	37.964253	, longitude =	-91.831833	where state_fips =	29	;
+update us_states set latitude=	46.879682	, longitude =	-110.362566	where state_fips =	30	;
+update us_states set latitude=	41.492537	, longitude =	-99.901813	where state_fips =	31	;
+update us_states set latitude=	38.80261	, longitude =	-116.419389	where state_fips =	32	;
+update us_states set latitude=	43.193852	, longitude =	-71.572395	where state_fips =	33	;
+update us_states set latitude=	40.058324	, longitude =	-74.405661	where state_fips =	34	;
+update us_states set latitude=	34.97273	, longitude =	-105.032363	where state_fips =	35	;
+update us_states set latitude=	43.299428	, longitude =	-74.217933	where state_fips =	36	;
+update us_states set latitude=	35.759573	, longitude =	-79.0193	where state_fips =	37	;
+update us_states set latitude=	47.551493	, longitude =	-101.002012	where state_fips =	38	;
+update us_states set latitude=	40.417287	, longitude =	-82.907123	where state_fips =	39	;
+update us_states set latitude=	35.007752	, longitude =	-97.092877	where state_fips =	40	;
+update us_states set latitude=	43.804133	, longitude =	-120.554201	where state_fips =	41	;
+update us_states set latitude=	41.203322	, longitude =	-77.194525	where state_fips =	42	;
+update us_states set latitude=	41.580095	, longitude =	-71.477429	where state_fips =	44	;
+update us_states set latitude=	33.836081	, longitude =	-81.163725	where state_fips =	45	;
+update us_states set latitude=	43.969515	, longitude =	-99.901813	where state_fips =	46	;
+update us_states set latitude=	35.517491	, longitude =	-86.580447	where state_fips =	47	;
+update us_states set latitude=	31.968599	, longitude =	-99.901813	where state_fips =	48	;
+update us_states set latitude=	39.32098	, longitude =	-111.093731	where state_fips =	49	;
+update us_states set latitude=	44.558803	, longitude =	-72.577841	where state_fips =	50	;
+update us_states set latitude=	37.431573	, longitude =	-78.656894	where state_fips =	51	;
+update us_states set latitude=	47.751074	, longitude =	-120.740139	where state_fips =	53	;
+update us_states set latitude=	38.597626	, longitude =	-80.454903	where state_fips =	54	;
+update us_states set latitude=	43.78444	, longitude =	-88.787868	where state_fips =	55	;
+update us_states set latitude=	43.075968	, longitude =	-107.290284	where state_fips =	56	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	60	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	64	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	66	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	68	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	69	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	70	;
+update us_states set latitude=	18.220833	, longitude =	-66.590149	where state_fips =	72	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	74	;
+update us_states set latitude=	0	, longitude =	0	where state_fips =	78	;
+
