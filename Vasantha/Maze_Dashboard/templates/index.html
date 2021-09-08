@@ -43,8 +43,12 @@
         </div>
       
     </nav>
-    <h4>About </h4>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nesciunt voluptas eligendi doloremque impedit corporis iure distinctio facere deleniti quam a ducimus enim, itaque, odit sint saepe sapiente harum explicabo!</p>
+    <h4>Now is the time to explore the wonders of the United States! </h4>
+    <p>From a selection of thousands of sites, each everyone of us has the opportunity to 
+      emerge ourselves in the coutnries rich history and nature.</p>
+
+
+    
 
 
 <!-- ------------------------------------------------------------- -->
@@ -52,40 +56,49 @@
   <div class="row justify-content-center">
   <div class="col-lg-12 col-md-12 col-sm-12">
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" >
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-     
-
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-bs-interval="10000">
           <image src="{{url_for('static',filename = 'images/museum.jpg')}}" class="d-block w-100" alt="...">
-          <!-- <img src="images/museum.jpg" class="d-block w-100" alt="..."> -->
+          <div class="carousel-caption d-none d-md-block">
+            <h1>MUSEUMS</h1>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="2000">
           <image src="{{url_for('static',filename = 'images/zoo.jpg')}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>ZOOS</h1>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="2000">
           <image src="{{url_for('static',filename = 'images/aquarium.jpg')}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>AQUARIUMS</h1>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-</div></div>
+  </div>
+</div>
 <!-- -------------------------------------------------------------carousel -->
 
-    </div>
+</div>
 
     
 
