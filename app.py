@@ -20,7 +20,7 @@ port='5432'
 db_user='ihrwvwmlryxtps'
 db='d84rgddae1lb9t'
 db_pass=os.environ.get('DB_PASS', '')
-db_url=f'{db_user}:{db_pass}@{server}:{port}/{db}'
+db_url=f'postgresql://{db_user}:{db_pass}@{server}:{port}/{db}'
 # db_url=#the environment variable called POSTGRES_URL
 my_engine=create_engine(db_url)
 
