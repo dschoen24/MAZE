@@ -805,13 +805,14 @@ var overlayMaps = {
 var myMap2 = L.map("map2", {
   center: [37.09, -95.71],
   zoom: 4,
-  layers: [street, mus3, mus4,mus5,mus1,mus2,mus6,mus7]
+  layers: [street]
+  // layers: [street, mus3, mus4,mus5,mus1,mus2,mus6,mus7]
 });
 
 // Pass our map layers to our layer control.
 // Add the layer control to the map.
 L.control.layers(baseMaps, overlayMaps, {
-  collapsed: true,
+  collapsed: false,
   position: 'bottomright'
 
   
