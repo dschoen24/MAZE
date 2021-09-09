@@ -3,6 +3,8 @@ CREATE TABLE US_States (
     State_Fips int   NOT NULL,
     Sabbr char(2)   NOT NULL,
     Sname varchar(356)   NOT NULL,
+    latitude decimal,
+    longitude decimal,
     PRIMARY KEY (State_Fips)
 );
 
