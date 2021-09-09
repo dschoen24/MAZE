@@ -1,6 +1,4 @@
 # Adding config.py file.
 api_keys.py
 config1.py
-
-#Adding venv 
-venv
+venv/

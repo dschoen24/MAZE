@@ -1,1 +1,1 @@
-FLASK_APP=Vasantha/Maze_Dashboard/app.py flask run
+FLASK_APP=app.py flask run
