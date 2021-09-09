@@ -805,7 +805,7 @@ var overlayMaps = {
 var myMap2 = L.map("map2", {
   center: [37.09, -95.71],
   zoom: 4,
-  layers: [street]
+  layers: [topo]
   // layers: [street, mus3, mus4,mus5,mus1,mus2,mus6,mus7]
 });
 
