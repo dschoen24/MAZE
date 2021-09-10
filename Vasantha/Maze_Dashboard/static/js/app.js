@@ -83,7 +83,7 @@ document.getElementById('but2').onclick = function() {
   for(var i = 0; i< markedCheckbox.length; i++){
     mtypes.push(parseInt(markedCheckbox[i].value))
   }
-  console.log(mtypes)
+  //console.log(mtypes)
   if (mtypes.length==0){
     sel_mus_type_id = 0 }
   else if (mtypes.length==1){
@@ -139,55 +139,28 @@ document.getElementById('but2').onclick = function() {
     plot_map(getdata)
 
   }
-  
-
-
-// sel_mus_type_id = ""  
-
-//     function sltype(mtid) {
-//       // return player.madeTeam == true;
-//       // A more concise way to express a boolean conditional
-//       return mtid.museum_type_id == 10  //scity && cit.county_fips == scounty;
-//     }
-
-    
-//     if (sel_mus_type_id != "")
-//     {
-//     // Call the custom function with filter()
-//       var getdata = jasondata.filter(sltype);
-//     }
-//     else
-//     {
-//       var getdata = jasondata
-//     }
-
-//     // the first time call was made to database file has been created with variable data
-//     // console.log("fetching from Local File")
-//     plot_map(getdata)
   }
   /////////////////////////////////////////////////////////////////////////////////////////////////
 
  
 
 /////////////////////////////////////////Most Popular museums Pie Chart ////////////////////////
-  // Basic Pie Chart Code
-// var data = [{
-//     values: [19, 26, 55],
-//     labels: ['Residential', 'Non-Residential', 'Utility'],
-//     type: 'pie',
-//     name: 'Starry Night',
-//     marker: {
-//       colors: ultimateColors[0]
-//     },
-//   }];
-  
-//   var layout = {
-//     height: 400,
-//     width: 500
-//   };
-  
-//   Plotly.newPlot('myDiv', data, layout);
+///////////////////code 9/10/2021////////////////////////
+d3.json("/APITOPM/0/0/0").then(topMusData =>{
+  console.log('here pie' ,topMusData)
 
+ 
+
+  topMusData.sort((a, b) => a.reviewcount - b.reviewcount);
+
+  values = topMusData.map(row => row.reviewcount),
+  labels = topMusData.map(row => row.museum_name),
+
+  plot_top5mus(values,labels)
+})
+
+
+///////////////////code 9/10/2021////////////////////////
 //////////////////////////////pie ends////////////////////////////////////////////////
 
 
@@ -225,7 +198,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
   sstate = d3.select("#SelState").property("value")
   state_name_comp = d3.select("#SelState option:checked").text()
   state_name_comp = state_name_comp.split("-")[0];
-  console.log('name', state_name_comp)
+  //console.log('name', state_name_comp)
   d3.json("/API/"+sstate).then(data =>{
     // console.log("here here:" , data)
     
@@ -317,13 +290,27 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
         plot_map(getstatedata)
       }
     
-      ///////////////////////////////////////////////////////////////////////////////////////////////// 
+      /////////////////////////////////////////////////////////////////////////////////////////////////
+      ///////////////////code 9/10/2021////////////////////////
+      d3.json("/APITOPM/"+sstate+"/0/0").then(topMusData =>{
+        console.log('here pie' ,topMusData)
+        topMusData.sort((a, b) => a.reviewcount - b.reviewcount);
+
+        values = topMusData.map(row => row.reviewcount),
+        labels = topMusData.map(row => row.museum_name),
+
+        plot_top5mus(values,labels)
+      })
+
+
+      ///////////////////code 9/10/2021////////////////////////
+
 
     //////////////////////////////revenue /////////////////////////////////////////////////
     
 
       d3.json("/APIREV/"+sstate+"/0/0").then(revenue_data =>{
-        console.log(revenue_data)
+        //console.log(revenue_data)
       
         revenue_data.sort((a, b) => a.revenue - b.revenue);
       
@@ -358,7 +345,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
   county_name_comp = d3.select("#SelCounty option:checked").text()
   
 
-  console.log(scounty)
+  //console.log(scounty)
   d3.json("/API/"+sstate+"/"+scounty).then(data =>{
     // console.log("here city:" , data)
     
@@ -445,11 +432,26 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
 
       ///////////////////////////////////////////////////////////////////////////////////////////////// 
 
+        ///////////////////code 9/10/2021////////////////////////
+        
+          d3.json("/APITOPM/"+sstate+"/"+scounty+"/0").then(topMusData =>{
+          console.log('here pie' ,topMusData)
+          topMusData.sort((a, b) => a.reviewcount - b.reviewcount);
+
+          values = topMusData.map(row => row.reviewcount),
+          labels = topMusData.map(row => row.museum_name),
+
+          plot_top5mus(values,labels)
+        })
+
+
+        ///////////////////code 9/10/2021////////////////////////
+
       //////////////////////////////revenue /////////////////////////////////////////////////
     
 
       d3.json("/APIREV/"+sstate+"/"+scounty+"/0").then(revenue_data =>{
-        console.log(revenue_data)
+        //console.log(revenue_data)
       
         revenue_data.sort((a, b) => a.revenue - b.revenue);
       
@@ -488,7 +490,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
   d3.json("/API/"+sstate+"/"+scounty+"/"+scity).then(data =>{
     // console.log("here city attarctions:" , data)
     
-    console.log(data)
+    //console.log(data)
     
     // Trace for the Data
   
@@ -546,12 +548,27 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
       }
 
       ///////////////////////////////////////////////////////////////////////////////////////////////// 
+
+  ///////////////////code 9/10/2021////////////////////////
+        
+    d3.json("/APITOPM/"+sstate+"/"+scounty+"/"+scity).then(topMusData =>{
+    console.log('here pie' ,topMusData)
+    topMusData.sort((a, b) => a.reviewcount - b.reviewcount);
+
+    values = topMusData.map(row => row.reviewcount),
+    labels = topMusData.map(row => row.museum_name),
+
+    plot_top5mus(values,labels)
+  })
+
+
+  ///////////////////code 9/10/2021////////////////////////     
      
  //////////////////////////////revenue /////////////////////////////////////////////////
     
 
  d3.json("/APIREV/"+sstate+"/"+scounty+"/"+scity).then(revenue_data =>{
-  console.log(revenue_data)
+  //console.log(revenue_data)
 
   revenue_data.sort((a, b) => a.revenue - b.revenue);
 
@@ -680,7 +697,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // A function to determine the marker size based on the population
 function map2(locations)
 {
-console.log("map2 heat map", locations)
+//console.log("map2 heat map", locations)
 
 function markerSize(population) {
   return population * 500;
@@ -866,6 +883,43 @@ L.control.layers(baseMaps, overlayMaps, {
 
 }
 
+////////////////////////9/10/2021
+function plot_top5mus(val,lab)
+{
+// Basic Pie Chart Code
+var ultimateColors = [
+  ['#133C55', '#FCBFB7','#6494AA','#8C001A','#FF9000'],
+  ['#593C8F', '#FF6B6B', '#65532F', '#DB4C40','#D295BF']
+  
+];
+var data = [{
+    values: val,
+    labels: lab,
+    type: 'pie',
+    opacity: 0.8, 
+    marker: {
+      colors: ultimateColors[0]
+    },
+  }];
+  
+  var layout = {
+    title: '<b>Top 5 most reviewed Museums</b>',
+    font:{
+      size : 8
+    },
+    height: 450,
+    width: 500,
+    margin: {"t": 80, "b": 0, "l": 40, "r": 0},
+    plot_bgcolor:"#fff8ed",
+    paper_bgcolor:"#fff8ed"
+    //showlegend: false
+    }
+  
+  Plotly.newPlot('plot_pie', data, layout);
+}
+////////////////////////9/10/2021
+
+
 function plot_revenue(rev,name)
 {
 
@@ -893,7 +947,7 @@ function plot_revenue(rev,name)
       plot_bgcolor:"#fff8ed",
       paper_bgcolor:"#fff8ed",
       font:{
-        size : 10
+        size : 8
       },
       showlegend: false,
       xaxis: {
@@ -904,7 +958,7 @@ function plot_revenue(rev,name)
         zeroline: false
         },
         margin: {
-          l: 350
+          l: 200
         }
       ,
       bargap : 0

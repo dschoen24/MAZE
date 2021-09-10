@@ -136,19 +136,19 @@ def APIM():
 @app.route("/APIREV/<st>/<ct>/<cy>")
 def st(st,ct,cy):
     if (str(st) == "0" and str(ct) == "0" and str(cy) == "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
         "revenue is not null "\
         "order by revenue desc limit 10 "        
     elif (str(st) != "0" and str(ct) == "0" and str(cy) == "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
         "state_fips  ="+str(st)+" and revenue is not null "\
         "order by revenue desc limit 10 "
     elif (str(st) != "0" and str(ct) != "0" and str(cy) == "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
         "state_fips  ="+str(st)+" and county_fips = "+str(ct)+" and revenue is not null "\
         "order by revenue desc limit 10 "    
     elif (str(st) != "0" and str(ct) != "0" and str(cy) != "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
         " county_fips = "+str(ct)+" and city_phyloc ='"+str(cy)+"' "\
         " and revenue is not null "\
         "order by revenue desc limit 10 "        
@@ -159,7 +159,28 @@ def st(st,ct,cy):
 
     return jsonify(top_reve_making)
 
+# Code 9/10/2021######################################################################
+@app.route("/APITOPM/<sta>/<cot>/<cty>")
+def sta(sta,cot,cty):
+    if (str(sta) == "0" and str(cot) == "0" and str(cty) == "0"):
+        get_top_mus_query = "select * from us_top_reviewed limit 5"
+    elif (str(sta) != "0" and str(cot) == "0" and str(cty) == "0"):
+        get_top_mus_query = "select * from us_top_reviewed where state_fips ="+str(sta)+"  limit 5"
+        # print(get_top_mus_query)
+    elif (str(sta) != "0" and str(cot) != "0" and str(cty) == "0"):
+        get_top_mus_query = "select * from us_top_reviewed where fips_county ="+str(cot)+"  limit 5"
+    elif (str(sta) != "0" and str(cot) != "0" and str(cty) != "0"):
+        get_top_mus_query = "select * from us_top_reviewed where fips_county ="+str(cot)+" and upper(city_phyloc) ='" + str(cty) + "' limit 5"
+        print (get_top_mus_query)
 
+    get_top_reviewed = pd.read_sql(get_top_mus_query,connection)
+    top_reviewed = get_top_reviewed.to_json(orient="records")
+    top_reviewed = json.loads(top_reviewed)
+
+    return jsonify(top_reviewed)    
+
+         
+# Code 9/10/2021######################################################################        
 
 @app.route("/APIHM")
 def APIHM():
@@ -429,7 +450,7 @@ def dashboard():
             county_list = connection.execute(get_counties)
         if selected_county != "":
             get_cities = "select distinct county,  city_phyloc from maze_data where latitude > 0 and county_fips="+selected_county+' order by city_phyloc '
-            print(get_cities)
+            #print(get_cities)
             city_list = connection.execute(get_cities)
 
     
