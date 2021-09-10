@@ -76,39 +76,52 @@ var jasondata = data
   {
 
 
-////////
+document.getElementById('but2').onclick = function() {
+  var markedCheckbox = document.querySelectorAll('input[name="mtype"]:checked');
+  var mtypes = []
 
-// d3.selectAll("[name=mtype]").on("change", function() {
-//   var selected = this.value;  
-// console.log("data", selected)  
-// })
-// sel_mus_type_id = ""
-// d3.select("#mtype1").on("change",update);
-// function update()
-// {
+  for(var i = 0; i< markedCheckbox.length; i++){
+    mtypes.push(parseInt(markedCheckbox[i].value))
+  }
+  console.log(mtypes)
+  if (mtypes.length==0){
+    sel_mus_type_id = 0 }
+  else if (mtypes.length==1){
+    sel_mus_type_id = mtypes[0] }
+  else{sel_mus_type_id = mtypes}
 
-// if (d3.select("#mtype1").property("checked") == true)
-// {
-//   console.log(d3.select("#mtype1").property("checked"))
-//   sel_mus_type_id = 1
-// }
-// }
-
-// console.log('mus', sel_mus_type_id)
-
-////////
-
-
-sel_mus_type_id = ""  
+    // console.log('s', sel_mus_type_id)
 
     function sltype(mtid) {
       // return player.madeTeam == true;
       // A more concise way to express a boolean conditional
-      return mtid.museum_type_id == 10  //scity && cit.county_fips == scounty;
+      //
+      if (mtypes.length == 1)
+      {return mtid.museum_type_id == mtypes[0]}
+      else if (mtypes.length == 2)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] }
+      else if (mtypes.length == 3)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] }
+      else if (mtypes.length == 4)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] || mtid.museum_type_id == mtypes[3] }
+      else if (mtypes.length == 5)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] || mtid.museum_type_id == mtypes[3] || mtid.museum_type_id == mtypes[4]}
+      else if (mtypes.length == 6)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] || mtid.museum_type_id == mtypes[3] || mtid.museum_type_id == mtypes[4] || mtid.museum_type_id == mtypes[5]}
+      else if (mtypes.length == 7)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] || mtid.museum_type_id == mtypes[3] || mtid.museum_type_id == mtypes[4] || mtid.museum_type_id == mtypes[5] || mtid.museum_type_id == mtypes[6]}
+      else if (mtypes.length == 8)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] || mtid.museum_type_id == mtypes[3] || mtid.museum_type_id == mtypes[4] || mtid.museum_type_id == mtypes[5] || mtid.museum_type_id == mtypes[6] || mtid.museum_type_id == mtypes[7]}
+      else if (mtypes.length == 9)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] || mtid.museum_type_id == mtypes[3] || mtid.museum_type_id == mtypes[4] || mtid.museum_type_id == mtypes[5] || mtid.museum_type_id == mtypes[6] || mtid.museum_type_id == mtypes[7] || mtid.museum_type_id == mtypes[8]}
+      else if (mtypes.length == 10)
+      {return mtid.museum_type_id == mtypes[0] || mtid.museum_type_id == mtypes[1] || mtid.museum_type_id == mtypes[2] || mtid.museum_type_id == mtypes[3] || mtid.museum_type_id == mtypes[4] || mtid.museum_type_id == mtypes[5] || mtid.museum_type_id == mtypes[6] || mtid.museum_type_id == mtypes[7] || mtid.museum_type_id == mtypes[8] || mtid.museum_type_id == mtypes[9]}
+
+      //return mtid.museum_type_id == mtypes[0] //|| mtid.museum_type_id == 10 //scity && cit.county_fips == scounty;
     }
 
     
-    if (sel_mus_type_id != "")
+    if (sel_mus_type_id != 0)
     {
     // Call the custom function with filter()
       var getdata = jasondata.filter(sltype);
@@ -120,7 +133,37 @@ sel_mus_type_id = ""
 
     // the first time call was made to database file has been created with variable data
     // console.log("fetching from Local File")
+    
+    
+    // console.log(getdata)
     plot_map(getdata)
+
+  }
+  
+
+
+// sel_mus_type_id = ""  
+
+//     function sltype(mtid) {
+//       // return player.madeTeam == true;
+//       // A more concise way to express a boolean conditional
+//       return mtid.museum_type_id == 10  //scity && cit.county_fips == scounty;
+//     }
+
+    
+//     if (sel_mus_type_id != "")
+//     {
+//     // Call the custom function with filter()
+//       var getdata = jasondata.filter(sltype);
+//     }
+//     else
+//     {
+//       var getdata = jasondata
+//     }
+
+//     // the first time call was made to database file has been created with variable data
+//     // console.log("fetching from Local File")
+//     plot_map(getdata)
   }
   /////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -539,6 +582,8 @@ d3.json("/APIHM").then(response =>{
 function plot_map(json_response)
 {
 
+var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }  
+
 // Creating the map object
 var myMap = L.map("map", {
   center: [50, -97],
@@ -803,15 +848,16 @@ var overlayMaps = {
 
 // Define a map object.
 var myMap2 = L.map("map2", {
-  center: [37.09, -95.71],
-  zoom: 4,
-  layers: [street, mus3, mus4,mus5,mus1,mus2,mus6,mus7]
+  center: [50, -97],
+  zoom: 3,
+  layers: [topo]
+  // layers: [street, mus3, mus4,mus5,mus1,mus2,mus6,mus7]
 });
 
 // Pass our map layers to our layer control.
 // Add the layer control to the map.
 L.control.layers(baseMaps, overlayMaps, {
-  collapsed: true,
+  collapsed: false,
   position: 'bottomright'
 
   

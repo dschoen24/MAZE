@@ -2,27 +2,17 @@ from flask import Flask, render_template, redirect, request
 import json
 from flask.json import jsonify
 from sqlalchemy import create_engine
-# from config1 import db_user, db_pass #credentials to connect to postgresql database
+from config1 import db_user, db_pass #credentials to connect to postgresql database
 # from config1 import *
 import pandas as pd
 import os
 
-print(os.getcwd())
-print(os.environ.get('DATABASE_URL', ''))
 
 app = Flask(__name__)
 
-# Creating an engine to connect to postgresql database 'employee_info'
+# Creating an engine to connect to postgresql database 'MAZE'
 
-# my_engine = create_engine(f'postgresql://{db_user}:{db_pass}@localhost:5432/MAZE')
-server='ec2-54-147-126-173.compute-1.amazonaws.com'
-port='5432'
-db_user='ihrwvwmlryxtps'
-db='d84rgddae1lb9t'
-db_pass=os.environ.get('DB_PASS', '')
-db_url=f'{db_user}:{db_pass}@{server}:{port}/{db}'
-# db_url=#the environment variable called POSTGRES_URL
-my_engine=create_engine(db_url)
+my_engine = create_engine(f'postgresql://{db_user}:{db_pass}@localhost:5432/MAZE')
 
 # creating connection
 connection = my_engine.connect()

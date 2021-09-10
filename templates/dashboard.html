@@ -137,35 +137,35 @@
     <div id="map_cont" style="align-items: center;">
       
       <center>  
-        
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='1' > --> <img src="https://img.icons8.com/ios-filled/100/000000/archeology.png" alt="HISTORY MUSEUM" title="HISTORY MUSEUM" width="1%">
+        <input type="button" id="but2" name="but2" value=" Only show ">
+        <input type="checkbox" id="mtype" name="mtype" value='1'> <img src="https://img.icons8.com/ios-filled/100/000000/archeology.png" alt="HISTORY MUSEUM" title="HISTORY MUSEUM" width="1%">
         HISTORY MUSEUM
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='2'> --><img src="https://img.icons8.com/ios-glyphs/96/000000/plant-under-sun.png" width="1%" alt="ARBORETUM, BOTANICAL GARDEN, OR NATURE CENTER" title="ARBORETUM, BOTANICAL GARDEN, OR NATURE CENTER"> 
+        <input type="checkbox" id="mtype" name="mtype" value='2'> <img src="https://img.icons8.com/ios-glyphs/96/000000/plant-under-sun.png" width="1%" alt="ARBORETUM, BOTANICAL GARDEN, OR NATURE CENTER" title="ARBORETUM, BOTANICAL GARDEN, OR NATURE CENTER"> 
         ARBORETUM, BOTANICAL GARDEN, OR NATURE CENTER
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='3'> --><img src="https://img.icons8.com/ios-glyphs/90/000000/planet.png" width="1%" alt="SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM" title="SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM"> 
+        <input type="checkbox" id="mtype" name="mtype" value='3'><img src="https://img.icons8.com/ios-glyphs/90/000000/planet.png" width="1%" alt="SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM" title="SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM"> 
         SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='4'> --><img src="https://img.icons8.com/metro/100/000000/quill-with-ink.png" width="1%" alt="HISTORIC PRESERVATION" title="HISTORIC PRESERVATION"> 
+        <input type="checkbox" id="mtype" name="mtype" value='4'><img src="https://img.icons8.com/metro/100/000000/quill-with-ink.png" width="1%" alt="HISTORIC PRESERVATION" title="HISTORIC PRESERVATION"> 
         HISTORIC PRESERVATION
         &nbsp;&nbsp;&nbsp;&nbsp; <br />
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='5'> --><img src="https://img.icons8.com/ios-glyphs/90/000000/museum.png" width="1%" alt="GENERAL MUSEUM" title="GENERAL MUSEUM">
+        <input type="checkbox" id="mtype" name="mtype" value='5'><img src="https://img.icons8.com/ios-glyphs/90/000000/museum.png" width="1%" alt="GENERAL MUSEUM" title="GENERAL MUSEUM">
         GENERAL MUSEUM
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='6'> --><img src="https://img.icons8.com/ios-filled/100/000000/harambe-the-gorilla.png" width="1%" alt="ZOO, WILDLIFE CONSERVATION" title="ZOO, WILDLIFE CONSERVATION"> 
+        <input type="checkbox" id="mtype" name="mtype" value='6'><img src="https://img.icons8.com/ios-filled/100/000000/harambe-the-gorilla.png" width="1%" alt="ZOO, WILDLIFE CONSERVATION" title="ZOO, WILDLIFE CONSERVATION"> 
         ZOO, WILDLIFE CONSERVATION
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='7'> --><img src="https://img.icons8.com/ios-glyphs/90/000000/paint-palette--v1.png" width="1%" alt="ART MUSEUM" title="ART MUSEUM">
+        <input type="checkbox" id="mtype" name="mtype" value='7'><img src="https://img.icons8.com/ios-glyphs/90/000000/paint-palette--v1.png" width="1%" alt="ART MUSEUM" title="ART MUSEUM">
         ART MUSEUM
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='8'> --><img src="https://img.icons8.com/ios-glyphs/100/000000/children.png" width="1%" alt="CHILDREN'S MUSEUM" title="CHILDREN'S MUSEUM"> 
+        <input type="checkbox" id="mtype" name="mtype" value='8'><img src="https://img.icons8.com/ios-glyphs/100/000000/children.png" width="1%" alt="CHILDREN'S MUSEUM" title="CHILDREN'S MUSEUM"> 
         CHILDREN'S MUSEUM
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='9'> --><img src="https://img.icons8.com/ios-glyphs/120/000000/dinosaur--v2.png" width="1%" alt="NATURAL HISTORY MUSEUM" title="NATURAL HISTORY MUSEUM"> 
+        <input type="checkbox" id="mtype" name="mtype" value='9'><img src="https://img.icons8.com/ios-glyphs/120/000000/dinosaur--v2.png" width="1%" alt="NATURAL HISTORY MUSEUM" title="NATURAL HISTORY MUSEUM"> 
         NATURAL HISTORY MUSEUM
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <!-- <input type="checkbox" id="mtype" name="mtype" value='10'> --><img src="https://img.icons8.com/ios-filled/100/000000/seahorse.png" width="1%" alt="AQUARIUM" title="AQUARIUM"> 
+        <input type="checkbox" id="mtype" name="mtype" value='10'><img src="https://img.icons8.com/ios-filled/100/000000/seahorse.png" width="1%" alt="AQUARIUM" title="AQUARIUM"> 
         AQUARIUM
         
         
@@ -173,7 +173,7 @@
 
     <div id="map"></div>
   </div>
-
+<!-- </form>   -->
 <!-- ////////////////////////Dashborad Leaflet 1 ends/////////////////////////////// -->
 <div class="container">
 <!-- ////////////////////////Dashborad PlOT 2 /////////////////////////////// -->
@@ -215,6 +215,9 @@
   
     <script type='text/javascript'> 
       $(document).ready(function(){
+
+        $("#but2").click(); 
+
         $('#SelState').change(function(){
           $('#SelCounty').val('');  
           $('#SelCity').val('');  

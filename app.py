@@ -12,7 +12,7 @@ print(os.environ.get('DATABASE_URL', ''))
 
 app = Flask(__name__)
 
-# Creating an engine to connect to postgresql database 'employee_info'
+# Creating an engine to connect to postgresql database 'MAZE'
 
 # my_engine = create_engine(f'postgresql://{db_user}:{db_pass}@localhost:5432/MAZE')
 server='ec2-54-147-126-173.compute-1.amazonaws.com'
