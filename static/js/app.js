@@ -168,7 +168,7 @@ d3.json("/APITOPM/0/0/0").then(topMusData =>{
 
 
 d3.json("/APIREV/0/0/0").then(revenue_data =>{
-  console.log(revenue_data)
+  //console.log(revenue_data)
 
   revenue_data.sort((a, b) => a.revenue - b.revenue);
 
