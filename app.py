@@ -172,22 +172,22 @@ def sta(sta,cot,cty):
 @app.route("/APIREV/<st>/<ct>/<cy>")
 def st(st,ct,cy):
     if (str(st) == "0" and str(ct) == "0" and str(cy) == "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
-        "revenue is not null "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
+        " revenue > 0 "\
         "order by revenue desc limit 10 "        
     elif (str(st) != "0" and str(ct) == "0" and str(cy) == "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
-        "state_fips  ="+str(st)+" and revenue is not null "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
+        "state_fips  ="+str(st)+"  and revenue > 0 "\
         "order by revenue desc limit 10 "
     elif (str(st) != "0" and str(ct) != "0" and str(cy) == "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
-        "state_fips  ="+str(st)+" and county_fips = "+str(ct)+" and revenue is not null "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
+        "state_fips  ="+str(st)+" and county_fips = "+str(ct)+" and revenue > 0 "\
         "order by revenue desc limit 10 "    
     elif (str(st) != "0" and str(ct) != "0" and str(cy) != "0"):
-        get_top_reve_making_query = "select distinct legal_name, revenue from maze_data where "\
+        get_top_reve_making_query = 'select distinct short_legal_name as "legal_name", revenue from maze_data where '\
         " county_fips = "+str(ct)+" and city_phyloc ='"+str(cy)+"' "\
-        " and revenue is not null "\
-        "order by revenue desc limit 10 "        
+        " and revenue > 0 "\
+        "order by revenue desc limit 10 "           
     
     get_top_reve_making = pd.read_sql(get_top_reve_making_query,connection)
     top_reve_making = get_top_reve_making.to_json(orient="records")
