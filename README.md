@@ -7,7 +7,9 @@ ____________________________________________________
 ___________________________________________________
 
 <table><tr><td align="center"><img src="Images/img12.jpg" width="100%"></tr></td></table>
-**Contributors:** Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)
+
+### Contributors: 
+**Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)**
 
 ### Objectives
 **The objective of this project was to create an interactive dashboard to help users**
