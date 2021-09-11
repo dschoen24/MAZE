@@ -291,7 +291,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
               sel_mus_type_id = mtypes[0] }
             else{sel_mus_type_id = mtypes}
           
-              // console.log('s', sel_mus_type_id)
+            console.log('s', sel_mus_type_id)
           
               function slstate(st) {
                 // return player.madeTeam == true;
@@ -346,7 +346,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
               // console.log("fetching from Local File")
               
               
-              console.log(getstatedata)
+              console.log(getdata)
               plot_map(getstatedata)
           
             }
@@ -660,7 +660,7 @@ d3.json("/APIHM").then(response =>{
 
 function plot_map(json_response)
 {
-console.log('inside', json_response)
+
 var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }  
 
 // Creating the map object

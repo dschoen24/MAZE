@@ -346,7 +346,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
               // console.log("fetching from Local File")
               
               
-              // console.log(getdata)
+              console.log(getstatedata)
               plot_map(getstatedata)
           
             }
@@ -660,7 +660,7 @@ d3.json("/APIHM").then(response =>{
 
 function plot_map(json_response)
 {
-
+console.log('inside', json_response)
 var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }  
 
 // Creating the map object
