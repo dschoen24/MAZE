@@ -102,4 +102,4 @@ The dashboard was deployed onto Heroku. This is a cloud platform that allows com
 * The connection string to the database in our app was changed
 * And finally, the fields were pushed to GitHub and Deployed! 
 
-** Presentation can be found in [Presentation](/Presentation) 
+**Presentation can be found in** [Presentation](/Presentation) 
