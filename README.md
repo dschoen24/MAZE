@@ -6,62 +6,96 @@ ____________________________________________________
 
 ___________________________________________________
 
+<table><tr><td align="center"><img src="Images/img12.jpg" width="100%"></tr></td></table>
 **Contributors:** Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)
 
-### Objective: Create an interactive Dashboard udner the requirements below!
+### Objectives
+**The objective of this project was to create an interactive dashboard to help users**
+* Plan trips after the pandemic is over
+* Help with career choices if interested in museums, preservation etc.
+* Help users with children plan vacations
 
-Your visualization must include a Python Flask–powered API, HTML/CSS, JavaScript, 
-and at least one database (SQL, MongoDB, SQLite, etc.). 
-1. Your project should fall into one of the below three tracks:
-2. A combination of web scraping and Leaflet or Plotly
-3. A dashboard page with multiple charts that update from the same data
-4. A server that performs multiple manipulations on data in a database prior to 
-visualization (must be approved)
-5. Your project should include at least one JS library that we did not cover.
-6. Your project must be powered by a dataset with at least 100 records.
-7. Your project must include some level of user-driven interaction (e.g., menus, 
-dropdowns, textboxes).
-8. Your final visualization should ideally include at least three views. 
-**
-Data**
+**Technologies Used:**
+* PostgreSQL
+* Python, Flask, Jinga
+* HTML/CSS
+* Bootstrap
+* JavaScript
+* JQuery
 
-**Table 1 : US_States**
-* Read from source to Pandas Dataframe
-* Trimmed Leading and Trailing Spaces
-* Made sure There were no duplicates
-* Identified 'State_Fips' as primary key
-* Wrote to US_States.csv that can be imported in PostgreSQL
+**Project Description**
 
-**Table 2 : US_Counties**
-* Read from source to Pandas Dataframe
-* Trimmed Leading and Trailing Spaces
-* Made sure There were no duplicates
-* Assigned State_Fips to each record by merging with States Dataframe using state abbeviation to compare
-* To handle the issue of incoming data from sources with unknown counties but known States, created a unique code based on the state_fips and assigned StateName as county Name. This observation came from US Census Data Table from where we used the same process for our county table.
-* created a new dataframe with 'County_Fips','County','State_Fips' columns
-* Identified 'County_Fips' as primary key
-* Identified 'State_Fips' as foreign key
-* Wrote to Us_Counties.csv that can be imported in PostgreSQL
+There are many attractions around the world, some attractions are for their intrinsic, exhibited natural or cultural value, others for their historic significance and yet still some others for their natural or built beauty. All these attributes offer leisure and amusement for visitors. 
 
-**Table 3 : Us_Census_Data**
-* Read from source to Pandas Dataframe
-* The original table had 150+ columns
-* Removed records with for State Totals as they are reduntant
-* state totals can be calculated from county information
-* Created Fips_County Field using State and County Fields that were both stored seperately as integers 
-    * converted state and county fields from int to str
-    * added leading zeros to State and County get the format required for fips_county
-    * concatenated state and county to make County_Fips Code that follows the Fips_County format
-* created final dataframe with selected fields   
-    * 'fips','POPESTIMATE2016','POPESTIMATE2017','POPESTIMATE2018','POPESTIMATE2019',
-    'POPESTIMATE2020', 'BIRTHS2016','BIRTHS2017','BIRTHS2018','BIRTHS2019','BIRTHS2020',
-    'DEATHS2016','DEATHS2017','DEATHS2018','DEATHS2019','DEATHS2020'
-* Wrote to US_Census_Data.csv that can be imported in PostgreSQL
+For this project were going to explore museums, aquariums, zoos, and nature centers within the US.
 
-**Table 4 : Museums**
-* Read from source to Pandas Dataframe
-* Remove mass N/A records from the table
-* Fill in the missing cells in lat/lng columns using geocode
-* Wrote as Museums.csv to be imported in PostgreSQL
+**This dashboard would have answered these questions and more**
+* Which city or state or county has the most museums? 
+* How many zoos or aquariums are there in various regions? 
+* What are the most popular museums?
+* What museums or related organizations have highest revenue?
+* How does the composition of museum types differ across the country?
+* Combine it with Census Data for population related analysis (most museums/zoos/aquariums per     population)
 
+**Data Sources:**
+*	Museums, Aquariums, and Zoos
+https://www.kaggle.com/imls/museum-directory?select=museums.csv
+*	Census Data 
+https://www2.census.gov/programs-surveys/popest/datasets/2010-2020/counties/totals/
 
+*	State FIPS: 
+https://www.census.gov/library/reference/code-lists/ansi/ansi-codes-for-states.html
+
+*	County FIPS:
+https://www.nrcs.usda.gov/wps/portal/nrcs/detail/national/home/cid=nrcs143_01369
+
+**More Resources:**
+* https://www.kaggle.com/annecool37/museum-data
+
+* https://www.kaggle.com/general/182617
+
+**Cleaning and preparing data:**
+* Source Data as CSV
+    * All our data was derived from Kaggle, and Census data compiled by the US Govt. Moreover, we used previously formatted data that distinguishes Counties and States, Census Data.   
+* Transform (Fill in the Gaps)
+    * After identifying the fields that are required. We populated the N/A values with latitude and longitude that we retrieved using Google geocode API. We used reverse geocoding for some records to retrieve address based on their coordinates. 
+* Transform FIPs
+	* For records that had missing county FIPS_Code, we used a different strategy where we used the lat/lng to derive the county FIP values.
+* Cleaned
+    * The final records free of irrelevant information was obtained resulting in the loss of only 43 records and retaining 33030 records (using pandas). Final records were exported as a CSV and loaded into PostgreSQL for extraction of data. 
+
+* ERD
+* <table><tr><td align="center"><img src="Images/ERD.jpg" width="100%"></tr></td></table>
+
+**Dashboard:**
+
+A dashboard was created that shows 5 visualizations that were created using Plotly and Leaflet. First time, when dashboard loads, all visualizations on the page display all aquariums, zoos, nature centers and museums across the USA. The user can further narrow down their search to state, county, and city by using the selection list at the top of the page. In addition to that , there are certain features specific to each individual chart for making them more interactive.
+
+* The first visualization is an interactive bar chart that displays aquariums, zoos, nature centers and museums for the USA, state, county or city depending on user selection. By using the legend located at the top right, the user can also change the display to specific categories.  
+* <table><tr><td align="center"><img src="Images/img1.jpg" width="100%"></tr></td></table>
+    
+* The leaflet displays all the attractions based on user selection. But it also provides an option to narrow down the search by selecting only the categories that they are interested in, by clicking the check boxes. This chart also displays name, the address and phone numbers to the various attractions.
+* <table><tr><td align="center"><img src="Images/img2.jpg" width="100%"></tr></td></table>
+* <table><tr><td align="center"><img src="Images/img6.jpg" width="100%"><td align="center"><img src="Images/img9.jpg" width="100%"></tr></table>
+ 
+* These charts are side by side on the dashboard, a horizontal bar chart and a pie chart. The analysis is of only the museums in the database. The horizontal bar chart shows the top 10 revenue making museums and the pie chart, the top 5 reviewed museums. Both charts are also dynamic/ interactive and change upon the selection of state, county, and city.  
+
+* <table><tr><td align="center"><img src="Images/img_rev1.jpg" width="100%"></tr></td></table>
+* <table><tr><td align="center"><img src="Images/img_rev2.jpg" width="100%"></tr></td></table>
+
+* The museums are categorized by their legal names and to know the various museums that are affiliated to them the user can select the ‘click for museum list’ to the bottom left of the chart to display the list.
+
+* <table><tr><td align="center"><img src="Images/img8.jpg" width="100%"></tr></td></table>
+
+* This chart is also an interactive map that shows information of the museums in the database. The chart has 2 different basemaps the user can select (street map or topographical view). The chart has a unique search option from the other charts as this search displays the types of museums and their ratios and how they are localized across the country. The user can select the museum type of choice by using the layer control located at the bottom right corner of the chart.
+
+* <table><tr><td align="center"><img src="Images/img4.jpg" width="100%"></tr></td></table>
+
+**Deployment:**
+
+The dashboard was deployed onto Heroku. This is a cloud platform that allows companies to build, deliver and scale apps. The deployment was performed via the following phases
+* The database was prepared by creating a Schema
+* The tables were imported in sequential order
+* The required fields needed for the deployment on Heroku were created (requirements.txt, runtime.txt etc.)
+* The connection string to the database in our app was changed
+* And finally, the fields were pushed to GitHub and Deployed! 
