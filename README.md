@@ -4,7 +4,7 @@ ____________________________________________________
 
 ## Museums - Aquariums - Zoos - Exploration
 
-___________________________________________________
+_____________________________________________________
 
 <table><tr><td align="center"><img src="Images/img12.jpg" width="100%"></tr></td></table>
 
@@ -101,3 +101,5 @@ The dashboard was deployed onto Heroku. This is a cloud platform that allows com
 * The required fields needed for the deployment on Heroku were created (requirements.txt, runtime.txt etc.)
 * The connection string to the database in our app was changed
 * And finally, the fields were pushed to GitHub and Deployed! 
+
+** Presentation can be found in [Presentation](/Presentation) 
