@@ -147,7 +147,7 @@ document.getElementById('but2').onclick = function() {
 /////////////////////////////////////////Most Popular museums Pie Chart ////////////////////////
 ///////////////////code 9/10/2021////////////////////////
 d3.json("/APITOPM/0/0/0").then(topMusData =>{
-  console.log('here pie' ,topMusData)
+  //console.log('here pie' ,topMusData)
 
  
 
@@ -298,7 +298,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
                 // A more concise way to express a boolean conditional
                 //
                 if (mtypes.length == 1)
-                {return st.museum_type_id == mtypes[0]}
+                {return  st.state_fips == sstate && (st.museum_type_id == mtypes[0])}
                 else if (mtypes.length == 2)
                 {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1]) }
                 else if (mtypes.length == 3)
@@ -346,7 +346,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
               // console.log("fetching from Local File")
               
               
-              console.log(getstatedata)
+              //console.log(getstatedata)
               plot_map(getstatedata)
           
             }
@@ -355,7 +355,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
       /////////////////////////////////////////////////////////////////////////////////////////////////
       ///////////////////code 9/10/2021////////////////////////
       d3.json("/APITOPM/"+sstate+"/0/0").then(topMusData =>{
-        console.log('here pie' ,topMusData)
+        //console.log('here pie' ,topMusData)
         topMusData.sort((a, b) => a.reviewcount - b.reviewcount);
 
         values = topMusData.map(row => row.reviewcount),
@@ -497,7 +497,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
         ///////////////////code 9/10/2021////////////////////////
         
           d3.json("/APITOPM/"+sstate+"/"+scounty+"/0").then(topMusData =>{
-          console.log('here pie' ,topMusData)
+          //console.log('here pie' ,topMusData)
           topMusData.sort((a, b) => a.reviewcount - b.reviewcount);
 
           values = topMusData.map(row => row.reviewcount),
@@ -660,7 +660,7 @@ d3.json("/APIHM").then(response =>{
 
 function plot_map(json_response)
 {
-console.log('inside', json_response)
+//console.log('inside', json_response)
 var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }  
 
 // Creating the map object

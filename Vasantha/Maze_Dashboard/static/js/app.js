@@ -298,7 +298,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
                 // A more concise way to express a boolean conditional
                 //
                 if (mtypes.length == 1)
-                {return st.museum_type_id == mtypes[0]}
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0])}
                 else if (mtypes.length == 2)
                 {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1]) }
                 else if (mtypes.length == 3)
