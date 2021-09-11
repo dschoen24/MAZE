@@ -273,23 +273,85 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
         })
       }
       else
-      {
+//////////////////////////else new ////////////////////
+        {
 
-        // Create a custom function to return players who made the team
-      function slstate(st) {
-        // return player.madeTeam == true;
-        // A more concise way to express a boolean conditional
-        return st.state_fips == sstate;
-      }
-  
-      // Call the custom function with filter()
-      let getstatedata = jsondata.filter(slstate);
-      
-        // the first time call was made to database file has been created with variable data
-        // console.log("fetching from Local File")
-        plot_map(getstatedata)
-      }
-    
+
+          document.getElementById('but2').onclick = function() {
+            var markedCheckbox = document.querySelectorAll('input[name="mtype"]:checked');
+            var mtypes = []
+          
+            for(var i = 0; i< markedCheckbox.length; i++){
+              mtypes.push(parseInt(markedCheckbox[i].value))
+            }
+            console.log(mtypes)
+            if (mtypes.length==0){
+              sel_mus_type_id = 0 }
+            else if (mtypes.length==1){
+              sel_mus_type_id = mtypes[0] }
+            else{sel_mus_type_id = mtypes}
+          
+              // console.log('s', sel_mus_type_id)
+          
+              function slstate(st) {
+                // return player.madeTeam == true;
+                // A more concise way to express a boolean conditional
+                //
+                if (mtypes.length == 1)
+                {return st.museum_type_id == mtypes[0]}
+                else if (mtypes.length == 2)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1]) }
+                else if (mtypes.length == 3)
+                {return st.state_fips == sstate && (st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] )}
+                else if (mtypes.length == 4)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] || st.museum_type_id == mtypes[3])}
+                else if (mtypes.length == 5)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] || st.museum_type_id == mtypes[3] || st.museum_type_id == mtypes[4])}
+                else if (mtypes.length == 6)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] || st.museum_type_id == mtypes[3] || st.museum_type_id == mtypes[4] || st.museum_type_id == mtypes[5])}
+                else if (mtypes.length == 7)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] || st.museum_type_id == mtypes[3] || st.museum_type_id == mtypes[4] || st.museum_type_id == mtypes[5] || st.museum_type_id == mtypes[6])}
+                else if (mtypes.length == 8)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] || st.museum_type_id == mtypes[3] || st.museum_type_id == mtypes[4] || st.museum_type_id == mtypes[5] || st.museum_type_id == mtypes[6] || st.museum_type_id == mtypes[7])}
+                else if (mtypes.length == 9)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] || st.museum_type_id == mtypes[3] || st.museum_type_id == mtypes[4] || st.museum_type_id == mtypes[5] || st.museum_type_id == mtypes[6] || st.museum_type_id == mtypes[7] || st.museum_type_id == mtypes[8])}
+                else if (mtypes.length == 10)
+                {return st.state_fips == sstate && ( st.museum_type_id == mtypes[0] || st.museum_type_id == mtypes[1] || st.museum_type_id == mtypes[2] || st.museum_type_id == mtypes[3] || st.museum_type_id == mtypes[4] || st.museum_type_id == mtypes[5] || st.museum_type_id == mtypes[6] || st.museum_type_id == mtypes[7] || st.museum_type_id == mtypes[8] || st.museum_type_id == mtypes[9])}
+          
+
+                //return mtid.museum_type_id == mtypes[0] //|| mtid.museum_type_id == 10 //scity && cit.county_fips == scounty;
+              }
+          
+              
+              if (sel_mus_type_id != 0)
+              {
+              // Call the custom function with filter()
+               var getstatedata = jsondata.filter(slstate)
+              }
+              else
+              {
+                
+                  /////////////
+                  function slstate1(st1) {
+                     return st1.state_fips == sstate ;
+                      }
+                  
+                   
+                    var getstatedata = jsondata.filter(slstate1);
+                  ////////////
+
+              }
+          
+              // the first time call was made to database file has been created with variable data
+              // console.log("fetching from Local File")
+              
+              
+              // console.log(getdata)
+              plot_map(getstatedata)
+          
+            }
+            }
+
       /////////////////////////////////////////////////////////////////////////////////////////////////
       ///////////////////code 9/10/2021////////////////////////
       d3.json("/APITOPM/"+sstate+"/0/0").then(topMusData =>{
