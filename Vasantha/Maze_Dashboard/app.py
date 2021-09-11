@@ -159,6 +159,43 @@ def st(st,ct,cy):
 
     return jsonify(top_reve_making)
 
+
+# @app.route("/APIREVData/<s>/<c>/<t>")
+# def st(s,c,t):
+#     if (str(s) == "0" and str(c) == "0" and str(t) == "0"):
+#         get_top_reve_data_query = 'select distinct museum_name, short_legal_name as "legal_name", revenue from maze_data where '\
+#         " revenue > 0 "\
+#         "order by revenue desc limit 100 "        
+#         get_top_reve_data_s = pd.read_sql(get_top_reve_data_query,connection)
+#         top_reve_data_s = get_top_reve_data_s.to_html()
+#         return render_template(top_reve_data_s)
+#     elif (str(s) != "0" and str(c) == "0" and str(t) == "0"):
+#         get_top_reve_data_query = 'select distinct museum_name,short_legal_name as "legal_name", revenue from maze_data where '\
+#         "state_fips  ="+str(s)+"  and revenue > 0 "\
+#         "order by revenue desc limit 1000 "
+#         get_top_reve_data_s = pd.read_sql(get_top_reve_data_query,connection)
+#         top_reve_data_s = get_top_reve_data_s.to_html()
+#         return render_template(top_reve_data_s)
+#     elif (str(s) != "0" and str(c) != "0" and str(t) == "0"):
+#         get_top_reve_data_query = 'select distinct museum_name, short_legal_name as "legal_name", revenue from maze_data where '\
+#         "state_fips  ="+str(s)+" and county_fips = "+str(c)+" and revenue > 0 "\
+#         "order by revenue desc limit 100 "  
+#         get_top_reve_data_c = pd.read_sql(get_top_reve_data_query,connection)
+#         top_reve_data_c = get_top_reve_data_c.to_html()
+#         return render_template(top_reve_data_c)  
+#     elif (str(s) != "0" and str(c) != "0" and str(t) != "0"):
+#         get_top_reve_data_query = 'select distinct museum_name, short_legal_name as "legal_name", revenue from maze_data where '\
+#         " county_fips = "+str(c)+" and city_phyloc ='"+str(t)+"' "\
+#         " and revenue > 0 "\
+#         "order by revenue desc limit 100 "        
+#         get_top_reve_data_t = pd.read_sql(get_top_reve_data_query,connection)
+#         top_reve_data_t = get_top_reve_data_t.to_html()
+#         return render_template(top_reve_data_t)  
+    
+#     get_top_reve_data = pd.read_sql(get_top_reve_data_query,connection)
+#     top_reve_data = get_top_reve_data.to_html()
+#     return render_template(top_reve_data)
+
 # Code 9/10/2021######################################################################
 @app.route("/APITOPM/<sta>/<cot>/<cty>")
 def sta(sta,cot,cty):
@@ -448,10 +485,39 @@ def dashboard():
             get_counties = "select distinct sname, county_fips, county from maze_data where latitude > 0  and state_fips="+selected_state+' order by county '
 
             county_list = connection.execute(get_counties)
+            
+            get_top_reve_data_query = 'select distinct museum_name,short_legal_name as "legal_name", revenue from maze_data where '\
+            "state_fips  ="+selected_state+"  and revenue > 0 and museum_type_id not in (2,6,10) "\
+            "order by revenue desc limit 1000 "
+            get_top_reve_data_s = pd.read_sql(get_top_reve_data_query,connection)
+            get_top_reve_data_s_df = get_top_reve_data_s[['museum_name', 'legal_name']]
+            top_reve_data_s = get_top_reve_data_s_df.to_html(index=False)
+            
+            
+            
+
         if selected_county != "":
             get_cities = "select distinct county,  city_phyloc from maze_data where latitude > 0 and county_fips="+selected_county+' order by city_phyloc '
             #print(get_cities)
             city_list = connection.execute(get_cities)
+
+            get_top_reve_data_query = 'select distinct museum_name, short_legal_name as "legal_name", revenue from maze_data where '\
+            "state_fips  ="+selected_state+" and county_fips = "+selected_county+" and revenue > 0 and museum_type_id not in (2,6,10) "\
+            "order by revenue desc limit 100 "  
+            get_top_reve_data_c = pd.read_sql(get_top_reve_data_query,connection)
+            get_top_reve_data_c_df = get_top_reve_data_c[['museum_name', 'legal_name']]
+            top_reve_data_c = get_top_reve_data_c_df.to_html(index=False)
+
+        if selected_city != "":
+            get_top_reve_data_query = 'select distinct museum_name, short_legal_name as "legal_name", revenue from maze_data where '\
+            " county_fips = "+selected_county+" and city_phyloc ='"+selected_city+"' "\
+            " and revenue > 0 and museum_type_id not in (2,6,10) "\
+            "order by revenue desc limit 100 "        
+            get_top_reve_data_t = pd.read_sql(get_top_reve_data_query,connection)
+            get_top_reve_data_t_df = get_top_reve_data_t[['museum_name', 'legal_name']]
+            top_reve_data_t = get_top_reve_data_t_df.to_html(index=False)
+              
+               
 
     
     # the results are rendered and displayed in HTML 
@@ -460,10 +526,32 @@ def dashboard():
     get_states = "select distinct state_fips, sabbr, sname from  maze_data where latitude > 0 order by sabbr"
     state_list = connection.execute(get_states)
 
+    get_top_reve_data_query = 'select distinct museum_name, legal_name, revenue from maze_data where '\
+            " revenue > 0 and museum_type_id not in (2,6,10) "\
+            "order by revenue desc limit 100 "        
+    get_top_reve_data = pd.read_sql(get_top_reve_data_query,connection)
+    get_top_reve_data_df = get_top_reve_data[['museum_name', 'legal_name']]
+    top_reve_data = get_top_reve_data_df.to_html(index=False)
+    
+    top_reve_data_temp = ""
+    if selected_state == "" :
+        top_reve_data_temp = top_reve_data
+    elif selected_state != "" :
+        top_reve_data_temp = top_reve_data_s
+    elif selected_state != "" and selected_county != "":
+        top_reve_data_temp =  top_reve_data_c    
+    elif selected_state != "" and selected_county != "" and selected_city != "":    
+        top_reve_data_temp =  top_reve_data_t
+
+
+    top_reve_data = top_reve_data.replace('\n','')
+    top_reve_data = top_reve_data.replace('class="dataframe"','class="table tablipede-str"')
+    top_reve_data = top_reve_data.replace('<thead>    <tr style="text-align: right;">      <th>0</th>      <th>1</th>    </tr>  </thead>','')
+        
        
     return render_template("dashboard.html",  mus_types=mus_types,state_list=state_list,
     sel_state=selected_state, county_list=county_list, sel_county=selected_county, 
-    city_list=city_list, sel_city=selected_city)
+    city_list=city_list, sel_city=selected_city, top_reve_data_temp=top_reve_data_temp)
 
 
 @app.route("/maps")
