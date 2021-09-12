@@ -77,7 +77,7 @@ A dashboard was created that shows 5 visualizations that were created using Plot
 * <table><tr><td align="center"><img src="Images/img1.jpg" width="100%"></tr></td></table>
     
 * The leaflet displays all the attractions based on user selection. But it also provides an option to narrow down the search by selecting only the categories that they are interested in, by clicking the check boxes. This chart also displays name, the address and phone numbers to the various attractions.
-* <table><tr><td align="center"><img src="Images/img2.jpg" width="100%"></tr></td></table>
+* <table><tr><td align="center"><img src="Images/img22.jpg" width="100%"></tr></td></table>
 * <table><tr><td align="center"><img src="Images/img6.jpg" width="100%"><td align="center"><img src="Images/img9.jpg" width="100%"></tr></table>
  
 * These charts are side by side on the dashboard, a horizontal bar chart and a pie chart. The analysis is of only the museums in the database. The horizontal bar chart shows the top 10 revenue making museums and the pie chart, the top 5 reviewed museums. Both charts are also dynamic/ interactive and change upon the selection of state, county, and city.  
