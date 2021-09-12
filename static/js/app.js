@@ -727,7 +727,7 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
             }
         
 ///////////////////////////////////////////////////////09/12/2021//////////////////////////////////////////////////////
-      
+
       //   // the first time call was made to database file has been created with variable data
       //   // console.log("fetching from Local File")
         plot_map(getcitydata)
@@ -881,13 +881,15 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 ////////////////////////Dashborad Leaflet 2 ///////////////////////////////
-// A function to determine the marker size based on the population
+
 function map2(locations)
 {
 //console.log("map2 heat map", locations)
 
-function markerSize(population) {
-  return population * 500;
+
+// A function to determine the marker size 
+function markerSize(noofmus) {
+  return noofmus * 500;
 }
 
 
@@ -910,7 +912,7 @@ var natHisMarker  = []; //"NATURAL HISTORY MUSEUM"
 // Loop through locations, and create the city and state markers.
 for (var i = 0; i < locations.length; i++) {
   // console.log (locations[i]['HISTORY MUSEUM'])
-  // Setting the marker radius for the state by passing population into the markerSize function
+  // Setting the marker radius  the museum type by passing the no of museums to the markerSize function
   if (markerSize(locations[i]['HISTORY MUSEUM']))
   {
   hisMusemMarker.push(
@@ -924,7 +926,7 @@ for (var i = 0; i < locations.length; i++) {
   );
   }
 
-  // Set the marker radius for the city by passing the population to the markerSize() function.
+  // Set the marker radius for  the museum type by passing the no of museums to the markerSize() function.
   if (markerSize(locations[i]['SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM']))
   {
   stemMarker.push(
@@ -938,7 +940,7 @@ for (var i = 0; i < locations.length; i++) {
   );
   }
 
-  // Set the marker radius for the city by passing the population to the markerSize() function.
+  // Set the marker radius  the museum type by passing the no of museums to the markerSize() function.
   if (markerSize(locations[i]['HISTORIC PRESERVATION']))
   {
   hisPresMarker.push(
@@ -952,7 +954,7 @@ for (var i = 0; i < locations.length; i++) {
   );
   }
 
-  // Set the marker radius for the city by passing the population to the markerSize() function.
+  // Set the marker radius for  the museum type by passing the no of museums to the markerSize() function.
   if (markerSize(locations[i]['GENERAL MUSEUM']))
   {
   GenMusemMarker.push(
@@ -965,7 +967,7 @@ for (var i = 0; i < locations.length; i++) {
     })
   );
   }
-  // Set the marker radius for the city by passing the population to the markerSize() function.
+  // Set the marker radius for the  the museum type by passing the no of museums to the markerSize() function.
   if (markerSize(locations[i]['ART MUSEUM']))
   {
   MyFavMarker.push(
@@ -979,7 +981,7 @@ for (var i = 0; i < locations.length; i++) {
   );
   }
 
-  // Set the marker radius for the city by passing the population to the markerSize() function.
+  // Set the marker radius for  the museum type by passing the no of museums to the markerSize() function.
   if (markerSize(locations[i]["CHILDREN'S MUSEUM"]))
   {
   ChMusemMarker.push(
@@ -993,7 +995,7 @@ for (var i = 0; i < locations.length; i++) {
   );
   }
 
-  // Set the marker radius for the city by passing the population to the markerSize() function.
+  // Set the marker radius for the museum type by passing the no of museums to the markerSize() function.
   if (markerSize(locations[i]['NATURAL HISTORY MUSEUM']))
   {
   natHisMarker.push(
@@ -1046,7 +1048,6 @@ var overlayMaps = {
   "ART": mus5,
   "CHILDREN'S": mus6,
   "NATURAL HISTORY": mus7
-  // "City Population": cities
 };
 
 
