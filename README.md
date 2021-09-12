@@ -11,7 +11,7 @@ _____________________________________________________
 ### Contributors: 
 **Vasantha Mutyala (V-MalM) / Valense Acquah-Louis (Tema-2021) / Saiyid Kazmi (saiyidmkazmi)  / Debra Potts (dschoen24)**
 
-### Objectives
+### Objectives:
 **The objective of this project was to create an interactive dashboard to help users**
 * Plan trips after the pandemic is over
 * Help with career choices if interested in museums, preservation etc.
