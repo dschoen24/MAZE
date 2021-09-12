@@ -1,8 +1,8 @@
-# Project-MAZE - A Dashboard
+<h4>Project-MAZE</h4><h6>Museums - Aquariums - Zoos - Exploration</h6>
 
 ____________________________________________________
 
-## Museums - Aquariums - Zoos - Exploration
+## An interactive dashboard
 
 _____________________________________________________
 
