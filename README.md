@@ -1,4 +1,4 @@
-# Project-MAZE
+# Project-MAZE - A Dashboard
 
 ____________________________________________________
 
