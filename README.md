@@ -25,7 +25,7 @@ _____________________________________________________
 * JavaScript
 * JQuery
 
-**Project Description**
+**Project Description:**
 
 There are many attractions around the world, some attractions are for their intrinsic, exhibited natural or cultural value, others for their historic significance and yet still some others for their natural or built beauty. All these attributes offer leisure and amusement for visitors. 
 
