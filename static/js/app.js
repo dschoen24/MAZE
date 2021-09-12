@@ -915,16 +915,17 @@ for (var i = 0; i < locations.length; i++) {
   // Setting the marker radius  the museum type by passing the no of museums to the markerSize function
   if (markerSize(locations[i]['HISTORY MUSEUM']))
   {
-  hisMusemMarker.push(
-    L.circle([locations[i]['coordinates'][2],locations[i]['coordinates'][3]], {
-      stroke: true,
-      fillOpacity: 0.75,
-      color: "#133C55",
-      fillColor: "#133C55",
-      radius: markerSize(locations[i]['HISTORY MUSEUM'])
-    })
-  );
+    hisMusemMarker.push(
+      L.circle([locations[i]['coordinates'][2],locations[i]['coordinates'][3]], {
+        stroke: true,
+        fillOpacity: 0.75,
+        color: "#133C55",
+        fillColor: "#133C55",
+        radius: markerSize(locations[i]['HISTORY MUSEUM'])
+      }).bindPopup(`<h6>No. of History Museums in ${locations[i]['coordinates'][1]}: ${locations[i]['HISTORY MUSEUM']}</h6>`)
+    );
   }
+  
 
   // Set the marker radius for  the museum type by passing the no of museums to the markerSize() function.
   if (markerSize(locations[i]['SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM']))
@@ -936,7 +937,7 @@ for (var i = 0; i < locations.length; i++) {
       color: "171738",
       fillColor: "#171738",
       radius: markerSize(locations[i]['SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM'])
-    })
+    }).bindPopup(`<h6>No. of science Museums in ${locations[i]['coordinates'][1]}: ${locations[i]['SCIENCE & TECHNOLOGY MUSEUM OR PLANETARIUM']}</h6>`)
   );
   }
 
@@ -950,7 +951,7 @@ for (var i = 0; i < locations.length; i++) {
       color: "#de6069",  //"#8C001A",
       fillColor: "#de6069",
       radius: markerSize(locations[i]['HISTORIC PRESERVATION'])
-    })
+    }).bindPopup(`<h6>No. of His Preserv Museums in ${locations[i]['coordinates'][1]}: ${locations[i]['HISTORIC PRESERVATION']}</h6>`)
   );
   }
 
@@ -964,7 +965,7 @@ for (var i = 0; i < locations.length; i++) {
       color: "#FF9000",
       fillColor: "#FF9000",
       radius: markerSize(locations[i]['GENERAL MUSEUM'])
-    })
+    }).bindPopup(`<h6>No. of His General Museums in ${locations[i]['coordinates'][1]}: ${locations[i]['GENERAL MUSEUM']}</h6>`)
   );
   }
   // Set the marker radius for the  the museum type by passing the no of museums to the markerSize() function.
@@ -977,7 +978,7 @@ for (var i = 0; i < locations.length; i++) {
       color: "#593C8F",
       fillColor: "#593C8F",
       radius: markerSize(locations[i]['ART MUSEUM'])
-    })
+    }).bindPopup(`<h6>No. of Art Museums in ${locations[i]['coordinates'][1]}: ${locations[i]['ART MUSEUM']}</h6>`)
   );
   }
 
@@ -991,7 +992,7 @@ for (var i = 0; i < locations.length; i++) {
       color: "white",
       fillColor: "#59A5C8",
       radius: markerSize(locations[i]["CHILDREN'S MUSEUM"])
-    })
+    }).bindPopup(`<h6>No. of Children's Museums in ${locations[i]['coordinates'][1]}: ${locations[i]["CHILDREN'S MUSEUM"]}</h6>`)
   );
   }
 
@@ -1005,7 +1006,7 @@ for (var i = 0; i < locations.length; i++) {
       color: "#2FBF71",
       fillColor: "#2FBF71",
       radius: markerSize(locations[i]['NATURAL HISTORY MUSEUM'])
-    })
+    }).bindPopup(`<h6>No. of Natural History Museums in ${locations[i]['coordinates'][1]}: ${locations[i]["NATURAL HISTORY MUSEUM"]}</h6>`)
   );
   }
 
@@ -1055,7 +1056,7 @@ var overlayMaps = {
 var myMap2 = L.map("map2", {
   center: [50, -97],
   zoom: 3,
-  layers: [topo, mus3, mus4]
+  layers: [topo, mus3, mus4,mus5,mus1]
   // layers: [street, mus3, mus4,mus5,mus1,mus2,mus6,mus7]
 });
 
