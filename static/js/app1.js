@@ -547,6 +547,20 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
         
 ///////////////////////////////////////////////////////09/12/2021//////////////////////////////////////////////////////
 
+
+
+
+      // {
+
+      //   // Create a custom function to return players who made the team
+      // function slcty(ct) {
+      //   // return player.madeTeam == true;
+      //   // A more concise way to express a boolean conditional
+      //   return ct.county_fips == scounty;
+      // }
+
+      // // Call the custom function with filter()
+      // let getcountydata = jsondata1.filter(slcty);
       
         // the first time call was made to database file has been created with variable data
         // console.log("fetching from Local File")
@@ -681,30 +695,29 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
               // A more concise way to express a boolean conditional
               //
               if (mtypes.length == 1)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && (cit.museum_type_id == mtypes[0])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && (ct.museum_type_id == mtypes[0])}
               else if (mtypes.length == 2)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1]) }
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1]) }
               else if (mtypes.length == 3)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && (cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] )}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && (ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] )}
               else if (mtypes.length == 4)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] || cit.museum_type_id == mtypes[3])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] || ct.museum_type_id == mtypes[3])}
               else if (mtypes.length == 5)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] || cit.museum_type_id == mtypes[3] || cit.museum_type_id == mtypes[4])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] || ct.museum_type_id == mtypes[3] || ct.museum_type_id == mtypes[4])}
               else if (mtypes.length == 6)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] || cit.museum_type_id == mtypes[3] || cit.museum_type_id == mtypes[4] || cit.museum_type_id == mtypes[5])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] || ct.museum_type_id == mtypes[3] || ct.museum_type_id == mtypes[4] || ct.museum_type_id == mtypes[5])}
               else if (mtypes.length == 7)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] || cit.museum_type_id == mtypes[3] || cit.museum_type_id == mtypes[4] || cit.museum_type_id == mtypes[5] || cit.museum_type_id == mtypes[6])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] || ct.museum_type_id == mtypes[3] || ct.museum_type_id == mtypes[4] || ct.museum_type_id == mtypes[5] || ct.museum_type_id == mtypes[6])}
               else if (mtypes.length == 8)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] || cit.museum_type_id == mtypes[3] || cit.museum_type_id == mtypes[4] || cit.museum_type_id == mtypes[5] || cit.museum_type_id == mtypes[6] || cit.museum_type_id == mtypes[7])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] || ct.museum_type_id == mtypes[3] || ct.museum_type_id == mtypes[4] || ct.museum_type_id == mtypes[5] || ct.museum_type_id == mtypes[6] || ct.museum_type_id == mtypes[7])}
               else if (mtypes.length == 9)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] || cit.museum_type_id == mtypes[3] || cit.museum_type_id == mtypes[4] || cit.museum_type_id == mtypes[5] || cit.museum_type_id == mtypes[6] || cit.museum_type_id == mtypes[7] || cit.museum_type_id == mtypes[8])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] || ct.museum_type_id == mtypes[3] || ct.museum_type_id == mtypes[4] || ct.museum_type_id == mtypes[5] || ct.museum_type_id == mtypes[6] || ct.museum_type_id == mtypes[7] || ct.museum_type_id == mtypes[8])}
               else if (mtypes.length == 10)
-              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( cit.museum_type_id == mtypes[0] || cit.museum_type_id == mtypes[1] || cit.museum_type_id == mtypes[2] || cit.museum_type_id == mtypes[3] || cit.museum_type_id == mtypes[4] || cit.museum_type_id == mtypes[5] || cit.museum_type_id == mtypes[6] || cit.museum_type_id == mtypes[7] || cit.museum_type_id == mtypes[8] || cit.museum_type_id == mtypes[9])}
+              {return (cit.city_phyloc == scity && cit.county_fips == scounty) && ( ct.museum_type_id == mtypes[0] || ct.museum_type_id == mtypes[1] || ct.museum_type_id == mtypes[2] || ct.museum_type_id == mtypes[3] || ct.museum_type_id == mtypes[4] || ct.museum_type_id == mtypes[5] || ct.museum_type_id == mtypes[6] || ct.museum_type_id == mtypes[7] || ct.museum_type_id == mtypes[8] || ct.museum_type_id == mtypes[9])}
         
       
               //return mtid.museum_type_id == mtypes[0] //|| mtid.museum_type_id == 10 //scity && cit.county_fips == scounty;
             }
-
       
 
             if (sel_mus_type_id != 0)
@@ -727,6 +740,19 @@ else if (d3.select("#SelState").property("value") != "" && d3.select("#SelCounty
             }
         
 ///////////////////////////////////////////////////////09/12/2021//////////////////////////////////////////////////////
+
+
+      // {
+
+      //   // Create a custom function to return players who made the team
+      // function slcity(cit) {
+      //   // return player.madeTeam == true;
+      //   // A more concise way to express a boolean conditional
+      //   return cit.city_phyloc == scity && cit.county_fips == scounty;
+      // }
+
+      // // Call the custom function with filter()
+      // let getcitydata = jsondata2.filter(slcity);
       
       //   // the first time call was made to database file has been created with variable data
       //   // console.log("fetching from Local File")
