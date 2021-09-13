@@ -509,9 +509,9 @@ def dashboard():
     top_reve_data_temp = ""
     if selected_state == "" :
         top_reve_data_temp = top_reve_data
-    elif selected_state != "" :
+    elif selected_state != "" and selected_county == "" and selected_city == "":    
         top_reve_data_temp = top_reve_data_s
-    elif selected_state != "" and selected_county != "":
+    elif selected_state != "" and selected_county != "" and selected_city == "": 
         top_reve_data_temp =  top_reve_data_c    
     elif selected_state != "" and selected_county != "" and selected_city != "":    
         top_reve_data_temp =  top_reve_data_t
