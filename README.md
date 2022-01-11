@@ -1,4 +1,4 @@
-<h4>Project-MAZE</h4><h6>Museums - Aquariums - Zoos - Exploration</h6>
+<h4>MAZE</h4><h6>Museums - Aquariums - Zoos - Exploration</h6>
 
 ____________________________________________________
 
